@@ -1,0 +1,20 @@
+// =============================================================================
+// dino.cst - Physical constraints for the Sipeed Tang Nano 20K (GW2AR-18C)
+// =============================================================================
+
+// --- Clock input ---
+IO_LOC  "clk" 4;
+IO_PORT "clk" PULL_MODE=UP IO_TYPE=LVCMOS33;
+
+// --- I2C OLED display ---
+// SCL = pin 73, SDA = pin 74
+IO_LOC  "io_scl" 73;
+IO_PORT "io_scl" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC  "io_sda" 74;
+IO_PORT "io_sda" DRIVE=8 IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// --- Control input ---
+// External push button on pin 15, active-low
+IO_LOC  "btn1" 15;
+IO_PORT "btn1" IO_TYPE=LVCMOS33 PULL_MODE=UP;
