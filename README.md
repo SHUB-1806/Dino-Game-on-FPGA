@@ -21,14 +21,14 @@ press the button again to restart.
 ```
 dino_game.gprj      Gowin IDE project file
 src/
-  top.v               Top-level module, wires everything together
-  jump_controller.v   Button -> timed jump pulse
-  score_logic.v        27 MHz -> ~9 Hz score tick
-  pattern_generator.v  Game state machine + all pixel rendering
-  oled_controller.v    SSD1306 init sequence + raster scan-out
-  screen_driver.v      Bit-banged I2C master
   dino.cst              Pin/IO constraints
   dino.sdc              Clock timing constraint
+  jump_controller.v   Button -> timed jump pulse
+  oled_controller.v    SSD1306 init sequence + raster scan-out
+  pattern_generator.v  Game state machine + all pixel rendering
+  score_logic.v        27 MHz -> ~9 Hz score tick
+  screen_driver.v      Bit-banged I2C master
+  top.v               Top-level module, wires everything together
 ```
 
 ## Building
