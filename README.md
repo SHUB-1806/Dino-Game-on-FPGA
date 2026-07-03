@@ -38,22 +38,3 @@ src/
 2. Open `dino_game.gprj`.
 3. Run Synthesize -> Place & Route -> generate the bitstream.
 4. Program the Tang Nano 20K over USB.
-
-## Can this run without an FPGA?
-
-No, not as-is. This is synthesizable Verilog written specifically for the
-Tang Nano 20K's FPGA fabric and its I2C-driven OLED — there's no CPU
-instruction stream to execute, so a laptop can't run the bitstream directly.
-
-You have two options if you don't have the board:
-
-- **Simulate it.** Tools like [Icarus Verilog](http://iverilog.icarus.com/) +
-  [GTKWave](https://gtkwave.sourceforge.net/), or Verilator, will run the
-  RTL and let you inspect signals/waveforms on your laptop. You won't see the
-  actual OLED output, but you can verify the game logic (jump timing, score
-  counter, collision detection, state machine) is behaving correctly.
-- **Get access to an FPGA.** The Tang Nano 20K is inexpensive (~$25-30) and
-  is what this project's pin constraints (`dino.cst`) target.
-
-If you want, I can help set up an Icarus Verilog testbench so you can
-simulate the game logic locally without any hardware.
